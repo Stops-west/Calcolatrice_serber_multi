@@ -16,6 +16,7 @@ public class Server {
             
             // Ciclo per tenere il server aperto anche in chiusura della connessione
             while(true){
+                System.out.println("Server in ascolto...");
                 // Accettazione connessione client
                 Socket client = server.accept();
                 System.out.println("Connessione accettata da " + client.getInetAddress());
