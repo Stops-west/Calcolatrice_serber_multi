@@ -10,9 +10,11 @@ public class Server {
     public void avvia(){
 
         // Apertura socket server
-        try(ServerSocket server = new ServerSocket(12345)){
-            System.out.println("Server avviato sulla porta 12345");
+        try(
+            ServerSocket server = new ServerSocket(12345);
             ExecutorService executor = Executors.newCachedThreadPool();
+        ){
+            System.out.println("Server avviato sulla porta 12345");
             
             // Ciclo per tenere il server aperto anche in chiusura della connessione
             while(true){

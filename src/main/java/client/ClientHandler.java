@@ -25,15 +25,14 @@ public class ClientHandler implements Runnable {
                 String op = in.readLine();
                 
                 if(op != null){
-                    // 2. INSERIAMO UN TRY-CATCH INTERNO
                     // Gestisce l'errore di formattazione senza interrompere la connessione con il client
                     try {
-                        String[] parti = op.split(";");
+                        String[] parti = op.split("\\s+");
                         Double op1 = Double.parseDouble(parti[0]);
-                        Double op2 = Double.parseDouble(parti[1]);
+                        Double op2 = Double.parseDouble(parti[2]);
                         Double res;
                         
-                        switch (parti[2]){
+                        switch (parti[1]){
                             case "+":
                                 res = op1 + op2;
                                 out.println("Risultato= " + res);
